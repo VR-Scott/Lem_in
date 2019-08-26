@@ -6,8 +6,8 @@ typedef	struct	s_room
 	int		x;
 	int		y;
 	int		ant;
-	int		cnt;
+	int		count;
 	char	*name;
-	char	**lnk;
+	char	**links;
 }
 # endif
