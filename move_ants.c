@@ -17,10 +17,7 @@ void	print_path(char ***path)
 	}
 }
 
-void	move_ants(char **paths, int ants)
+void	move_ants(char ***paths, int ants)
 {
-	char ***path;
-
-	path = make_path(paths);
 	print_path(path);
 }
