@@ -19,5 +19,9 @@ void	print_path(char ***path)
 
 void	move_ants(char ***paths, int ants)
 {
-	print_path(path);
+	if (paths)
+	{
+
+		print_path(path);
+	}
 }

@@ -5,7 +5,9 @@
 
 void	move_ants(char **paths, int ants);
 
-char	***make_path( char **paths);
+char	***make_path(char **paths);
+void	divert_ants(int *ants, char **len);
+void	print_ants(int *ants);
 
 /*typedef	struct	s_room
 {
