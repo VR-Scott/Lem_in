@@ -1,5 +1,6 @@
-#include <stdlib.h>
 #include "lemin.h"
+#include <stdlib.h>
+#include <stdio.h>
 
 /*char ***make_paths(char **av)
 {
@@ -34,11 +35,13 @@ int main(int ac, char **av)
 {
 	if (ac > 3)
 	{
-		int	*ants;
-		ants = (int*)ft_memalloc(sizeof(int) * (ac - 1));
-		ants[0] = atoi(av[1]);
-		divert_ants(ants, av + 2);
-		print_ants(ants);
+		int	*ant;
+		int n;
+
+		ant = (int*)ft_memalloc(sizeof(int) * (ac - 1));
+		n = atoi(av[1]);
+		split_ants(n, ant, av + 2, pathnum(n, av + 2)); 
+		print_ants(ant);
 	}
 	return (0);
 }
