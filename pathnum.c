@@ -1,15 +1,15 @@
 #include "lemin.h"
 #include <stdio.h>
-int		pathnum(int n, char **len)
+int		pathnum(int n, int *len)
 {
 	int splits;
 	int i;
 
-	i = 0;
+	i = 1;
 	splits = 0;
-	if ((n - i) + ft_strlen(len[0]) >= i + ft_strlen(len[1]))
+	if ((n - i) + len[0] >= i + len[1])
 	{
-		while ((n - i) + ft_strlen(len[0]) >= i + ft_strlen(len[1]))
+		while ((n - i) + len[0] >= i + len[1])
 			i++;
 		printf("i is %d\n", i - 1);
 		splits++;

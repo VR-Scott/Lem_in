@@ -1,21 +1,22 @@
 #include "lemin.h"
 #include <stdio.h>
 
-void	split_ants(int n, int *ant, char **len, int mx)
+void	split_ants(int n, int *ant, int *len, int mx)
 {
 	int i;
 
 	i = 0;
 	printf("mx is : %d\n", mx);
+	printf("len[mx] is : %d\n", len[mx]);
 	while (i < mx)
 	{
-		while (ant[i] + ft_strlen(len[i]) < ft_strlen(len[mx]))
+		while (ant[i] + len[i] < len[mx])
 		{
-			print_ants(ant);
 			ant[i]++;
 			n--;
 		}
 		i++;
+		print_ants(ant);
 	}
 	i = 0;
 	while (n--)
