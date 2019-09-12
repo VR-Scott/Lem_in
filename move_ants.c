@@ -75,7 +75,7 @@ void	move_ants(char ***path, int  n_ant)
 	print->n_path = cnt_path(path);
 	print->len = path_len(path, print->n_path);
 	//print_len(print->len, print->n_path);
-	if (!(print->ant = (int*)ft_memalloc(sizeof(int) * print->n_path)))
+	if (!(print->ant = (int*)ft_memalloc(sizeof(int) * (print->n_path + 1))))
 	{
 		ft_putstr("couldn't malloc ant\n");
 			print->ant = NULL;
