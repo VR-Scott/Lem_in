@@ -46,6 +46,9 @@ void	del_move(t_move **move);
 ** multi_path.c
 */
 void	multi_path(char ***path, t_print *print);
+/*
+** multi_1st.c
+*/
 void	turn_loop(t_print *print, t_move **moves);
 void	put_loop(t_print *print, t_move **moves);
 int		turn_amount(t_print *print);
