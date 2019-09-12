@@ -31,14 +31,14 @@
 	}
 }*/
 
-char	***make_path(char **av, int ac)
+static char	***make_path(char **av, int ac)
 {
 	char	***path;
 	int		i;
 
 	i = 0;
 	if(!(path = (char ***)ft_memalloc(sizeof(char**) * ac + 1)))
-		path = NULL;
+		ft_putstr("couldn't malloc for path"); 
 	while (i < ac)
 	{
 		path[i] = ft_strsplit(av[i], ' ');
@@ -62,7 +62,7 @@ char	***make_path(char **av, int ac)
 	}
 }*/
 
-void	del_path(char ****path)
+void		del_path(char ****path)
 {
 	int	i;
 	int	j;
@@ -127,7 +127,7 @@ void	print_len(int *len, int n)
 	}
 }*/
 
-int main(int ac, char **av)
+int			main(int ac, char **av)
 {
 	if (ac > 2)
 	{

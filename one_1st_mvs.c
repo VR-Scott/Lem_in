@@ -1,27 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   one_1st_mvs.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vscott <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/20 12:36:34 by vscott            #+#    #+#             */
-/*   Updated: 2019/09/02 09:56:59 by vscott           ###   ########.fr       */
+/*   Created: 2019/09/06 10:46:01 by vscott            #+#    #+#             */
+/*   Updated: 2019/09/08 11:34:56 by vscott           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "lemin.h"
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char *))
+void	one_1st_mvs(char **path, int n, int len)
 {
-	unsigned int i;
+	int i;
+	int ant;
+	int p;
 
-	if (!s || !f)
-		return ;
-	i = 0;
-	while (s[i] != '\0')
+	i = 1;
+	ant = 1;
+	p = 2;
+	while (p > 0)
 	{
-		f(i, s + i);
-		i++;
+		while (--p > 0)
+		{
+			if (path[p])
+				print_moves(ant, path[p]);
+			if (p > 1)
+				ft_putchar(' ');
+			ant++;
+		}
+		p = ++i;
+		ft_putchar('\n');
+		if (ant > n || i > len)
+			break ;
+		ant = 1;
 	}
 }

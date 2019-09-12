@@ -11,11 +11,11 @@ int		pathnum(int n, int *len)
 	{
 		while ((n - i) + len[0] >= i + len[1])
 			i++;
-		printf("i is %d\n", i - 1);
+	//	printf("i is %d\n", i - 1);
 		splits++;
 	}
 	if (len[2])
 		splits += pathnum(i - 1, len + 1);
-	printf("split is %d\n", splits);
+	//printf("split is %d\n", splits);
 	return (splits);
 }

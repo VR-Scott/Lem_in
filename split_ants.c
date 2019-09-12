@@ -1,29 +1,31 @@
 #include "lemin.h"
 #include <stdio.h>
 
-void	split_ants(int n, int *ant, int *len, int mx)
+void	split_ants(t_print *print)
 {
 	int i;
+	int	n;
 
+	n = print->ant_tot;
 	i = 0;
-	printf("mx is : %d\n", mx);
-	printf("len[mx] is : %d\n", len[mx]);
-	while (i < mx)
+	//printf("mx is : %d\n", mx);
+	//printf("len[mx] is : %d\n", len[mx]);
+	while (i < print->n_path)
 	{
-		while (ant[i] + len[i] < len[mx])
+		while (print->ant[i] + print->len[i] < print->len[print->n_path])
 		{
-			ant[i]++;
+			print->ant[i]++;
 			n--;
 		}
 		i++;
-		print_ants(ant);
+		//print_ants(ant);
 	}
 	i = 0;
 	while (n--)
 	{
-		printf("i is : %d\n", i);
-		ant[i++]++;
-		if (i > mx)
+		//printf("i is : %d\n", i);
+		print->ant[i++]++;
+		if (i > print->n_path)
 			i = 0;
 	}
 }
