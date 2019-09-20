@@ -6,11 +6,19 @@
 /*   By: vscott <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/16 13:38:43 by vscott            #+#    #+#             */
-/*   Updated: 2019/09/16 13:38:48 by vscott           ###   ########.fr       */
+/*   Updated: 2019/09/19 16:56:37 by vscott           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lemin.h"
+
+void	change_col(int i)
+{
+	t_col	p;
+
+	p = colours();
+	ft_putstr(p.col[(i - 1) % 46]);
+}
 
 int		num_of_path(int n, int *len)
 {
